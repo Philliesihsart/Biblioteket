@@ -10,14 +10,25 @@ namespace Biblioteket
     internal class Bibliotek
     {
         string _biblioteksNavn;
+        List<Laaner> laanere;
 
         public Bibliotek(string navn)
         {
-            _biblioteksNavn = navn;    
+            laanere = new List<Laaner>();
+            _biblioteksNavn = navn;
         }
         public string HentBibliotek()
         {
-            return $"Velkommen til {_biblioteksNavn} - datoen er idag {DateTime.Today}"; 
+            return $"Velkommen til {_biblioteksNavn} - datoen er idag {DateTime.Today}";
+        }
+
+        public void OpretLaaner(int laanerNummer, string navn)
+        {
+            laanere.Add(new Laaner(laanerNummer, navn));
+        }
+        public string HentLaaner(int id)
+        {
+            return $"Lånernummer: {laanere[id]._laanerNummer} - Navn: {laanere[id]._navn} er låner hos {_biblioteksNavn}";
         }
     }
 }
