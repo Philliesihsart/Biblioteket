@@ -19,7 +19,7 @@ namespace Biblioteket
         }
         public string HentBibliotek()
         {
-            return $"Velkommen til {_biblioteksNavn} - datoen er idag {DateTime.Today}";
+            return $"Velkommen til {_biblioteksNavn} - datoen er idag {DateTime.Now.ToShortDateString()}";
         }
 
         public void OpretLaaner(int laanerNummer, string navn)
@@ -29,6 +29,15 @@ namespace Biblioteket
         public string HentLaaner(int id)
         {
             return $"Lånernummer: {laanere[id]._laanerNummer} - Navn: {laanere[id]._navn} er låner hos {_biblioteksNavn}";
+        }
+        public string HentAlleLaanere()
+        {
+            string alleLaanere = "";
+            foreach (Laaner laaner in laanere)
+            {
+                alleLaanere += $"Lånernummer: {laaner._laanerNummer} - Navn: {laaner._navn} er låner hos {_biblioteksNavn}";
+            }
+            return alleLaanere;
         }
     }
 }
