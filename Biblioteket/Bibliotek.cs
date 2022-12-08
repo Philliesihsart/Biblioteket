@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -24,9 +25,9 @@ namespace Biblioteket
             return $"Velkommen til {_biblioteksNavn} - datoen er idag {DateTime.Now.ToShortDateString()}";
         }
 
-        public void OpretLaaner(string navn)
+        public void OpretLaaner(string navn, string email)
         {
-            laanere.Add(new Laaner(++number, navn));
+            laanere.Add(new Laaner(++number, navn, email));
         }
         public string HentLaaner(int id)
         {
@@ -37,7 +38,7 @@ namespace Biblioteket
             string alleLaanere = "";
             foreach (Laaner laaner in laanere)
             {
-                alleLaanere += $"Lånernummer: {laaner._laanerNummer} - Navn: {laaner._navn} er låner hos {_biblioteksNavn}\n";
+                alleLaanere += $"Lånernummer: {laaner._laanerNummer} - Navn: {laaner._navn} Email: {laaner._email} er låner hos {_biblioteksNavn}\n";
             }
             return alleLaanere;
         }

@@ -33,7 +33,9 @@ class Program
                 case 2:
                     Console.Clear();
                     Console.Write("Indtast venligt lånerenes navn: ");
-                    bib.OpretLaaner(Console.ReadLine());
+                    string navn = Console.ReadLine();
+                    Console.Write("Indtast email: ");
+                    bib.OpretLaaner(navn,Console.ReadLine());
                     Console.Clear();
                     break;
                 case 3:

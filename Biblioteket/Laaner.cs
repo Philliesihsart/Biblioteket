@@ -6,15 +6,13 @@ using System.Threading.Tasks;
 
 namespace Biblioteket
 {
-    internal class Laaner
+    internal class Laaner : Person
     {
         public int _laanerNummer { get; }
-        public string _navn { get; }
 
-        public Laaner(int laanerNummer, string navn)
+        public Laaner(int laanerNummer, string navn, string email): base(navn, email)
         {
             _laanerNummer = laanerNummer;
-            _navn = navn;
             
         }
     }
