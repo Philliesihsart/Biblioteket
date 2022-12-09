@@ -1,6 +1,6 @@
 # Biblioteket
 ### Description
-Dette er et program hvor man har et bibliotek hvor man så kan oprette brugere til biblioteket og udskrive dem på skærmen
+System til bibliotek
 ### User Guide/Instructions
 Menuen viser nogle forskellige tal som man så kan vælge imellem.
 ### Changelog
