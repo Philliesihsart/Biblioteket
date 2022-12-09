@@ -31,14 +31,14 @@ namespace Biblioteket
         }
         public string HentLaaner(int id)
         {
-            return $"Lånernummer: {laanere[id]._laanerNummer} - Navn: {laanere[id]._navn} er låner hos {_biblioteksNavn}";
+            return $"Lånernummer: {laanere[id]._laanerNummer}\nNavn: {laanere[id]._navn} er låner hos {_biblioteksNavn}";
         }
         public string HentAlleLaanere()
         {
             string alleLaanere = "";
             foreach (Laaner laaner in laanere)
             {
-                alleLaanere += $"Lånernummer: {laaner._laanerNummer} - Navn: {laaner._navn} Email: {laaner._email} er låner hos {_biblioteksNavn}\n";
+                alleLaanere += $"Lånernummer: {laaner._laanerNummer}\nNavn: {laaner._navn}\nEmail: {laaner._email}\n";
             }
             return alleLaanere;
         }

@@ -9,16 +9,19 @@ class Program
         Console.Clear();
         bool boolean = true;
         Bibliotek bib = new Bibliotek("Phillips super mega seje bibliotek");
-        
+
 
         while (boolean == true)
         {
-            Console.WriteLine("Du kan vælge følgende:");
-            Console.WriteLine("1. Vis bibliotekets navn og dato");
-            Console.WriteLine("2. Opret låner");
-            Console.WriteLine("3. Udskriv lånere");
-            Console.WriteLine("4. Afslut");
-            
+            Console.WriteLine(" ----------------------------------");
+            Console.WriteLine("| Du kan vælge følgende:           |");
+            Console.WriteLine("| 1. Vis bibliotekets navn og dato |");
+            Console.WriteLine("| 2. Opret låner                   |");
+            Console.WriteLine("| 3. Udskriv lånere                |");
+            Console.WriteLine("| 4. Afslut                        |");
+            Console.WriteLine(" ----------------------------------");
+            Console.Write("Indtast her: ");
+
             int input = Convert.ToInt32(Console.ReadLine());
             string tilbage = "\nTryk enter for at gå tilbage";
             switch (input)
@@ -35,13 +38,17 @@ class Program
                     Console.Write("Indtast venligt lånerenes navn: ");
                     string navn = Console.ReadLine();
                     Console.Write("Indtast email: ");
-                    bib.OpretLaaner(navn,Console.ReadLine());
+                    bib.OpretLaaner(navn, Console.ReadLine());
+                    Console.Clear();
+                    Console.WriteLine("Bruger er nu oprettet");
+                    Console.WriteLine($"{tilbage}");
+                    Console.ReadKey();
                     Console.Clear();
                     break;
                 case 3:
                     Console.Clear();
                     Console.WriteLine(bib.HentAlleLaanere());
-                    Console.WriteLine($"{tilbage}");
+                    Console.WriteLine($"\n{tilbage}");
                     Console.ReadKey();
                     Console.Clear();
 
@@ -65,4 +72,3 @@ class Program
         Console.WriteLine(bib.HentLaaner(0));
     }
 }
-
