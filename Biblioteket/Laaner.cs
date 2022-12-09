@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Biblioteket
 {
-    internal class Laaner : Person
+    internal class Laaner : Person // Nedarvning fra person
     {
-        public int _laanerNummer { get; }
+        public int _laanerNummer { get; } // ReadOnly nummer
 
-        public Laaner(int laanerNummer, string navn, string email): base(navn, email)
+        public Laaner(int laanerNummer, string navn, string email): base(navn, email) // Constructor
         {
             _laanerNummer = laanerNummer;
             
